@@ -1,1 +1,4 @@
-# CCWC2021Mining
+# AI_IoT Congress 2021 Mining
+#
+# https://worldaiiotcongress.org/
+#
