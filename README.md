@@ -1,4 +1,4 @@
-# AI_IoT Congress 2021 Mining
+# 2021 Mining
 #
-# https://worldaiiotcongress.org/
+# IoT-cloud mining on virtual Raspberry Pis
 #
