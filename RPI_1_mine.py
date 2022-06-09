@@ -11,8 +11,8 @@ class RPI_1_Mine():
         for items in output:
             print("RPI_1:" + items)
 
-        err = stderr.readlines()
-        for items in err:
+        error = stderr.readlines()
+        for items in error:
             print("error - RPI_1:" + items)
 
         RPI_1.close()
