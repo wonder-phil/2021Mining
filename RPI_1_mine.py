@@ -6,10 +6,14 @@ class RPI_1_Mine():
 
         RPI_1.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         RPI_1.connect(hostname='localhost',username='pi',port=5022,password="raspberry")
-        stdin,stdout,stder=RPI_1.exec_command('python3 testMine.py ' + str(difficulty))
+        stdin,stdout,stderr=RPI_1.exec_command('python3 testMine.py ' + str(difficulty))
         output = stdout.readlines()
         for items in output:
             print("RPI_1:" + items)
+
+        err = stderr.readlines()
+        for items in err:
+            print("error - RPI_1:" + items)
 
         RPI_1.close()
 
