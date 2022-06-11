@@ -13,10 +13,18 @@ output = stdout.readlines()
 for items in output:
     print("RPI_2:" + items)
 
+error = stderr.readlines()
+for items in error:
+    print("error - RPI_2:" + items)
+
 stdin,stdout,stderr=RPI_1.exec_command('python3 testMine.py ' + '3')
 output = stdout.readlines()
 for items in output:
     print("RPI_1:" + items)
+
+error = stderr.readlines()
+for items in error:
+    print("error - RPI_1:" + items)
 
 RPI_1.close()
 RPI_2.close()
