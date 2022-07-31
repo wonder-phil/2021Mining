@@ -13,7 +13,7 @@ class ClockChain(threading.Thread):
     def run(self):
         print("Starting thread "+self.name+"\n")
         rpi_mine = RPI_Mine(int(self.port), self.name, self.difficulty)
-        self._return = rpi_mine.ReturnValue()
+        self._return = rpi_mine.return_value()
 
     def join(self):
         Thread.join(self)

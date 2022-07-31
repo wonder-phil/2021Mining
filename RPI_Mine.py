@@ -13,11 +13,15 @@ class RPI_Mine():
         for items in output:
             print(name + ": " + items)
 
+        error = stderr.readlines()
+            for items in error:
+            print("error - " + name + ": " + items)            
+
         self._return = output[0]
 
         RPI.close()
 
-    def ReturnValue(self):
+    def return_value(self):
         return self._return 
 
     
