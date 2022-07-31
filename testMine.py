@@ -7,4 +7,5 @@ class TestMine():
         newBlock=b.mineBlock(difficulty)
         print("start:"+newBlock.bHash+":end")
 
-        
+
+tm = TestMine(3);

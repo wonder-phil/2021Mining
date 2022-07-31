@@ -5,7 +5,7 @@ class RPI_1_Mine():
         RPI_1 = paramiko.SSHClient()
 
         RPI_1.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        RPI_1.connect(hostname='localhost',username='pi',port=5022,password="raspberry")
+        RPI_1.connect(hostname='localhost',username='pgb',port=5022,password="pgb")
         stdin,stdout,stder=RPI_1.exec_command('python3 testMine.py ' + str(difficulty))
         output = stdout.readlines()
         for items in output:
@@ -14,5 +14,4 @@ class RPI_1_Mine():
         RPI_1.close()
 
 
-rpi_1 = RPI_1_Mine(3)        
-        
+rpi_1 = RPI_1_Mine(3)

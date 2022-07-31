@@ -1,6 +1,8 @@
 import paramiko
 
 class RPI_Mine():
+    _return = None
+    
     def __init__(self,myPort,name,difficulty):
         RPI = paramiko.SSHClient()
 
@@ -11,4 +13,12 @@ class RPI_Mine():
         for items in output:
             print(name + ": " + items)
 
+        self._return = output[0]
+
         RPI.close()
+
+    def ReturnValue(self):
+        return self._return 
+
+    
+

@@ -8,16 +8,25 @@ class ClockChain(threading.Thread):
         self.port = port
         self.name = name
         self.difficulty = difficulty
+        self._return = None
 
     def run(self):
         print("Starting thread "+self.name+"\n")
-        tm = RPI_Mine(int(self.port), self.name, self.difficulty)
+        rpi_mine = RPI_Mine(int(self.port), self.name, self.difficulty)
+        self._return = rpi_mine.ReturnValue()
+
+    def join(self):
+        Thread.join(self)
+        return self._return        
         
 t1=ClockChain(5022,"RPI_1",4)
-t2=ClockChain(5023,"RPI_2",2)
+t2=ClockChain(5023,"RPI_2",4)
 
-t1.start()
 t2.start()
+t1.start()
 
-t1.join()
-t2.join()
+
+x = t1.join()
+y = t2.join()
+
+print("x: ",x,"y: ",y)
