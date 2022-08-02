@@ -1,9 +1,9 @@
 from Block import *
 
 class TestMine():
-    def __init__(self, difficulty):
+    def __init__(self, previousHash, data, difficulty):
         self.difficulty = difficulty
-        b=Block("empty","genesis block")
+        b=Block(previousHash,data)
         newBlock=b.mineBlock(difficulty)
         print("start:"+newBlock.bHash+":end")
 
