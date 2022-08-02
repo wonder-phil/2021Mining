@@ -14,7 +14,7 @@ class RPI_Mine():
             print(name + ": " + items)
 
         error = stderr.readlines()
-            for items in error:
+        for items in error:
             print("error - " + name + ": " + items)            
 
         self._return = output[0]
