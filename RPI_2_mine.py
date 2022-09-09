@@ -5,16 +5,17 @@ class RPI_1_Mine():
         RPI_1 = paramiko.SSHClient()
 
         RPI_1.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        RPI_1.connect(hostname='localhost',username='pgb',port=5023,password="pgb")
-        stdin,stdout,stder=RPI_1.exec_command('python3 testMine.py ' + str(difficulty))
-        print(stder.readlines())
+
+        RPI_1.connect(hostname='localhost',username='pi',port=5022,password="raspberry")
+        stdin,stdout,stderr=RPI_1.exec_command('python3 testMine.py ' + str(difficulty))
+
         output = stdout.readlines()
         for items in output:
-            print("RPI_2:" + items)
+            print("RPI_1:" + items)
 
         error = stderr.readlines()
         for items in error:
-            print("error - RPI_2:" + items)
+            print("error - RPI_1:" + items)
 
         RPI_1.close()
 
